@@ -1,5 +1,5 @@
 import { FaCheck } from "react-icons/fa";
-import ABDO from "../assets/abdo.jpg";
+import ABDO from "../assets/personal_photo.webp";
 import AttendButton from "../components/AttendButton";
 import { homePageQuestions } from "../constants";
 import gsap from "gsap";
@@ -79,12 +79,12 @@ const Home = () => {
 
       <div className="flex flex-col items-center justify-center gap-6 my-8">
         <h2 className="first-content text-center text-2xl">
-          **للمدربين والخبراء ومقدمين الكورسات فقط**
+          **للمبتدئين وأصحاب الخبرات في التجارة الالكترونيه فقط**
         </h2>
-        <h1 className="first-content text-center text-[70px] text-primary font-bold font-almarai leading-[1.15]">
-          خمس خطوات لدخل ثابت
+        <h1 className="first-content text-center text-[70px] text-primary font-bold font-almarai leading-[1.45]">
+          خمس خطوات لدخل يفوق
           <br />
-          وتدفق عملاء مستمر
+          ال 20 الف جنيه شهرياً
         </h1>
         <div className="first-content w-full flex justify-center">
           <AttendButton handleModalOpen={() => setIsBookingModalShown(true)} />
@@ -107,7 +107,7 @@ const Home = () => {
         </ul>
 
         <div className="questions-container w-full max-w-[75%] space-y-4">
-          <img className="w-full rounded-md" src={ABDO} alt="Abdo's Photo" />
+          <img loading="eager" className="w-full rounded-md h-[450px] object-cover" src={ABDO} alt="Abdo's Photo" />
           <h3 className="text-center leading-6 font-montserrat font-semibold tracking-wide">
             Abdelrahman Sayed the founder of{" "}
             <span className="underline text-primary">MTTV</span>

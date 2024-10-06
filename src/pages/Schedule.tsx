@@ -12,7 +12,7 @@ const Schedule: React.FC = () => {
       {/* Calendly Widget */}
       <div className="w-full h-[1000px]">
         <InlineWidget
-          url="https://calendly.com/dev-elbehery/30min"
+          url="https://calendly.com/abdullrhman-sayed"
           styles={{
             height: '100%',
             width: '100%',

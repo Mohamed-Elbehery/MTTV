@@ -3,7 +3,6 @@ import App from "../App";
 import Schedule from "../pages/Schedule";
 import Questionnare from "../pages/Questionnare";
 import VideoTraining from "../pages/VideoTraining";
-import Counter from "../pages/Counter"; // Add this import
 import Home from "../pages/Home";
 
 const router = createBrowserRouter([
@@ -26,10 +25,6 @@ const router = createBrowserRouter([
       {
         path: "/videotraining",
         element: <VideoTraining />,
-      },
-      {
-        path: "/counter", // Add this new route
-        element: <Counter />,
       },
     ],
   },

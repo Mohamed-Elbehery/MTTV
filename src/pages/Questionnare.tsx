@@ -94,7 +94,7 @@ const Questionnare = () => {
       await fetch("https://sendmail-api-docs.vercel.app/api/send", {
         method: "POST",
         body: JSON.stringify({
-          to: "dev.elbehery@gmail.com",
+          to: "abdojudo123456@gmail.com",
           subject: `Questionnare Answers - ${userEmail.toString()}`,
           message: msg,
         }),
@@ -111,7 +111,7 @@ const Questionnare = () => {
       {progress == 0 && (
         <div className="space-y-5">
           <h3 className="text-primary font-medium text-2xl text-center">الخطوة الأولى : اضغط على ابدأ عشان تحجز استشارتك المجانية</h3>
-          <p className="max-w-[640px] text-xl text-center">ملحوظة : فضلا…هتجاوب على استبيان سريع, دقة اجاباتك هتزيد من فائدة الاستشارة لأننا هنحلل اجابتك عشان نقدر نفهم اكتر البيزنس الخاص بيك</p>
+          <p className="max-w-[640px] text-xl text-center">ملحوظة : فضلا…هتجاوب على استبيان سريع, دقة اجاباتك هتزيد من فائدة الاستشارة لأننا هنحلل اجابتك عشان نشوف ازاي هنقدر نساعدك وايه الطريقة المناسبه ليك</p>
 
           <ProgressButtons onClick={handleStart} />
         </div>
