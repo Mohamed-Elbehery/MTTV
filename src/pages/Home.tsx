@@ -78,7 +78,7 @@ const Home = () => {
       />
 
       <div className="flex flex-col items-center justify-center gap-6 my-8">
-        <h2 className="first-content text-center text-lg md:text-xl xl:text-2xl">
+        <h2 className="first-content text-center text-base sm:text-lg xl:text-2xl">
           **للمبتدئين وأصحاب الخبرات في التجارة الالكترونيه فقط**
         </h2>
         <h1 className="first-content text-center text-2xl sm:text-3xl md:text-4xl xl:text-[70px] text-primary font-bold font-almarai !leading-[1.45]">
