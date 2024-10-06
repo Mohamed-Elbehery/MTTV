@@ -109,9 +109,9 @@ const Questionnare = () => {
       {isLoading && <Loading />}
 
       {progress == 0 && (
-        <div className="space-y-5">
-          <h3 className="text-primary font-medium text-2xl text-center">الخطوة الأولى : اضغط على ابدأ عشان تحجز استشارتك المجانية</h3>
-          <p className="max-w-[640px] text-xl text-center">ملحوظة : فضلا…هتجاوب على استبيان سريع, دقة اجاباتك هتزيد من فائدة الاستشارة لأننا هنحلل اجابتك عشان نشوف ازاي هنقدر نساعدك وايه الطريقة المناسبه ليك</p>
+        <div className="space-y-5 px-4 sm:px-0">
+          <h3 className="text-primary font-medium text-lg sm:text-xl md:text-2xl text-center">الخطوة الأولى : اضغط على ابدأ عشان تحجز استشارتك المجانية</h3>
+          <p className="max-w-[640px] text-base leading-7 sm:text-lg md:text-xl text-center">ملحوظة : فضلا…هتجاوب على استبيان سريع, دقة اجاباتك هتزيد من فائدة الاستشارة لأننا هنحلل اجابتك عشان نشوف ازاي هنقدر نساعدك وايه الطريقة المناسبه ليك</p>
 
           <ProgressButtons onClick={handleStart} />
         </div>
@@ -120,8 +120,8 @@ const Questionnare = () => {
       {progress > 0 && progress < questions.length + 1 && (
         <>
           {/* Questions */}
-          <div key={progress} className="question space-y-6 w-fit mx-auto">
-            <h3 className="text-primary font-bold text-2xl w-[640px] text-balance">
+          <div key={progress} className="question space-y-6 w-fit mx-auto max-[700px]:w-[380px] max-[440px]:w-full max-[440px]:px-4">
+            <h3 className="text-primary font-bold text-base sm:text-xl md:text-2xl w-[640px] text-balance max-[700px]:w-[380px] max-[440px]:w-full">
               {currentQuestion?.id} - {currentQuestion?.title}
             </h3>
 
@@ -131,13 +131,13 @@ const Questionnare = () => {
                   setActiveChoice(choice);
                   changeAnswerValue(choice);
                   goToNextQuestion();
-                }} className={cn("bg-gray-800 border-white border rounded-lg p-4 cursor-pointer hover:bg-gray-600", activeChoice === choice && "bg-gray-600")} key={choice}><span className={`opacity-0 ${activeChoice == choice && "!opacity-100"}`}>✓</span> {choice}</div>
+                }} className={cn("bg-gray-800 border-white border rounded-lg p-4 cursor-pointer hover:bg-gray-600 text-sm sm:text-base", activeChoice === choice && "bg-gray-600")} key={choice}><span className={`opacity-0 ${activeChoice == choice && "!opacity-100"}`}>✓</span> {choice}</div>
               ))
             ) : (
               <input
                 key={progress}
                 onChange={handleInputChange}
-                className="w-[640px] border-b bg-transparent outline-0 pb-2 text-primary text-lg"
+                className="w-[640px] border-b bg-transparent outline-0 pb-2 text-primary text-lg max-[700px]:w-[380px] max-[440px]:w-full"
                 type={progress == 2 ? "email" : "text"}
                 name={progress == 2 ? "email" : undefined}
                 autoComplete={progress == 2 ? "email" : "name"}

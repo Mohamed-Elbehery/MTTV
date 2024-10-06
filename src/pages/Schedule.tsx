@@ -6,11 +6,11 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 const Schedule: React.FC = () => {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mt-8 text-center">Schedule a Meeting</h1>
+    <div className="container mx-auto sm:p-4 p-8">
+      <h1 className="text-2xl font-bold my-8 text-center">Schedule a Meeting</h1>
 
       {/* Calendly Widget */}
-      <div className="w-full h-[1000px]">
+      <div className="w-full h-[1200px] sm:h-[1000px]">
         <InlineWidget
           url="https://calendly.com/abdullrhman-sayed"
           styles={{
