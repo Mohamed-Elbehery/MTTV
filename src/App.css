@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply font-cairo;
+}
+
+body {
+  @apply bg-[#0E1924] text-white;
+  background-image: radial-gradient(
+    rgba(41, 62, 99, 0.418) 2px,
+    transparent 2px
+  );
+  background-size: 6.5px 6.5px;
+}
+
+.question {
+  animation: slide-up 1s;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
