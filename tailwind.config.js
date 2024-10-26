@@ -10,8 +10,8 @@ export default {
         center: true,
       },
       colors: {
-        primary: "#DDBE81",
-        secondary: "#272E38",
+        primary: "#A1223B",
+        secondary: "#FCF7F7",
       },
       fontFamily: {
         "cairo": ["Cairo", "Almarai", "Montserrat"],
@@ -22,3 +22,5 @@ export default {
   },
   plugins: [],
 }
+
+{/* #A1223B */}

@@ -7,12 +7,12 @@ html {
 }
 
 body {
-  @apply bg-[#0E1924] text-white;
+  @apply bg-[#27080e] text-white;
   background-image: radial-gradient(
-    rgba(41, 62, 99, 0.418) 2px,
-    transparent 2px
+    rgba(255, 255, 255, 0.15) 1px,
+    transparent 1px
   );
-  background-size: 6.5px 6.5px;
+  background-size: 30px 30px;
 }
 
 .question {

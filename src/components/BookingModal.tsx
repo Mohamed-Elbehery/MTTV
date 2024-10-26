@@ -40,14 +40,36 @@ export default function BookingModal({
     return emailRegex.test(email);
   }
 
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const msg = `<div style="background-color: #fff; color: #000; padding: 12px">
+      <p style="margin: 12px 0;">Name : ${user.name}</p>
+      <p style="margin: 12px 0;">Email : ${user.email}</p>
+      <p style="margin: 12px 0;">Phone : ${user.phone}</p>
+      </div>`;
+
+    await fetch("https://sendmail-api-docs.vercel.app/api/send", {
+      method: "POST",
+      body: JSON.stringify({
+        to: "abdojudo123456@gmail.com",
+        subject: `Booking a Seat - ${user.email.toString()}`,
+        message: msg,
+      }),
+    });
+
+    navigate("/videotraining");
+  }
+
   return (
     isBookingModalShown && (
-      <>
+      <div className="fixed inset-0 flex items-center justify-center z-50">
         <div
           className="z-50 overlay opacity-0 fixed inset-0 bg-black bg-opacity-75"
           onClick={handleModalClose}
         />
-        <div className="z-50 booking-modal fixed left-1/2 top-[calc(50% - 5px)] -translate-x-1/2 -translate-y-[calc(50%)] rounded-lg bg-[#17253A]">
+
+        <div className="z-50 booking-modal fixed left-1/2 top-[calc(50% - 5px)] -translate-x-1/2 -translate-y-[calc(50%)] rounded-lg bg-primary w-[540px] max-[600px]:w-[90%]">
           <div className="absolute top-3 right-4">
             <HiXMark
               onClick={handleModalClose}
@@ -55,24 +77,27 @@ export default function BookingModal({
             />
           </div>
 
-          <div className="space-y-2 font-almarai px-6 py-8 pt-14">
-            <h1 className="text-center text-4xl font-bold">
+          <div className="space-y-2 font-almarai px-6 py-8 pt-14 max-[600px]:space-y-4 max-[600px]:px-4 max-[600px]:pt-8 max-[600px]:pb-4">
+            <h1 className="text-center text-xl sm:text-4xl font-bold max-[600px]:hidden">
               احجز مقعدك في التدريب المجاني
             </h1>
-            <p className="text-center text-xl">
+            <p className="text-center text-base sm:text-lg">
               دخل بياناتك عشان تدخل التدريب المجاني
             </p>
           </div>
           <form
-            onSubmit={(e) => e.preventDefault()}
-            className="flex flex-col gap-y-6 bg-white px-6 py-6"
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-y-6 bg-white px-6 py-6 max-[600px]:px-4 max-[600px]:py-4 max-[600px]:gap-y-4"
           >
-            <div>
+            <div className="space-y-2">
+              <label className="text-gray-500" htmlFor="name">
+                اسمك
+              </label>
               <input
-                dir={"ltr"}
                 type="text"
-                className="pl-4 text-left outline-none border border-gray-400 rounded-md p-2 w-full text-secondary placeholder:text-secondary placeholder:opacity-75"
-                placeholder="اسمك"
+                dir="ltr"
+                id="name"
+                className="pl-4 text-left outline-none border border-gray-400 rounded-md p-2 w-full text-gray-500 placeholder:opacity-75"
                 autoComplete="name"
                 required
                 value={user.name}
@@ -85,12 +110,15 @@ export default function BookingModal({
                 }
               />
             </div>
-            <div>
+            <div className="space-y-2">
+              <label className="text-gray-500" htmlFor="email">
+                ايميلك
+              </label>
               <input
-                type="email"
-                dir={"ltr"}
-                className="pl-4 text-left outline-none border border-gray-400 rounded-md p-2 w-full text-secondary placeholder:text-secondary placeholder:opacity-75"
-                placeholder="ايميلك"
+                id="email"
+                dir="ltr"
+                name="email"
+                className="pl-4 text-left outline-none border border-gray-400 rounded-md p-2 w-full text-gray-500 placeholder:opacity-75"
                 autoComplete="email"
                 required
                 value={user.email}
@@ -103,12 +131,16 @@ export default function BookingModal({
                 }
               />
             </div>
-            <div>
+            <div className="space-y-2">
+              <label className="text-gray-500" htmlFor="phone-number">
+                رقم التليفون
+              </label>
               <input
-                dir={"ltr"}
-                className="pl-4 outline-none border border-gray-400 rounded-md p-2 w-full text-secondary placeholder:text-secondary placeholder:opacity-75"
-                placeholder="رقم التليفون"
+                id="phone-number"
+                name="phone"
                 type="tel"
+                dir="ltr"
+                className="pl-4 outline-none border border-gray-400 rounded-md p-2 w-full text-gray-500 placeholder:opacity-75"
                 autoComplete="tel"
                 required
                 value={user.phone}
@@ -127,22 +159,22 @@ export default function BookingModal({
                   navigate("videotraining");
                 }
               }}
-              className={`flex items-center justify-center gap-x-3 bg-primary text-secondary text-2xl font-cairo font-bold w-full py-3 rounded-lg`}
+              className={`flex items-center justify-center gap-x-3 bg-primary hover:bg-[#7e1a2e] transition text-secondary text-base sm:text-2xl font-cairo font-bold w-full py-3 rounded-lg`}
             >
               اضغط للدخول للمحاضرة المجانية
             </button>
-            <p className="flex items-center justify-center gap-x-2 text-center text-gray-500 text-[17px]">
+            <p className="flex sm:items-center justify-center gap-x-2 text-center text-gray-500 text-sm sm:text-[17px]">
               <HiLockClosed className="text-xl" />
               احنا بنحترم خصوصيتك, معلوماتك في امان
             </p>
           </form>
           <div className="px-6 py-8">
-            <p className="text-center">
+            <p className="text-center text-sm sm:text-base">
               التدريب متاح لمدة 24 ساعة من دخولك, ادخل دلوقتي
             </p>
           </div>
         </div>
-      </>
+      </div>
     )
   );
 }
