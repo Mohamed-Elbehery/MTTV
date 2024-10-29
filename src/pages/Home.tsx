@@ -49,7 +49,14 @@ const Home = () => {
     );
   }, []);
 
+  const handleModalOpen = () => {
+    gsap.set("body", { overflow: "hidden" });
+    setIsBookingModalShown(true);
+  };
+
   const handleModalClose = () => {
+    gsap.set("body", { overflow: "auto" });
+
     gsap.to(".booking-modal", {
       opacity: 0,
       duration: 0.5,
@@ -87,7 +94,10 @@ const Home = () => {
           ال 20 الف جنيه شهرياً
         </h1>
         <div className="first-content w-full flex justify-center">
-          <AttendButton className="max-[1180px]:max-w-[720px] max-[768px]:max-w-[475px] max-[500px]:max-w-[270px]" handleModalOpen={() => setIsBookingModalShown(true)} />
+          <AttendButton
+            className="max-[1180px]:max-w-[720px] max-[768px]:max-w-[475px] max-[500px]:max-w-[270px]"
+            handleModalOpen={handleModalOpen}
+          />
         </div>
       </div>
 
@@ -107,7 +117,12 @@ const Home = () => {
         </ul>
 
         <div className="questions-container w-full max-w-[75%] max-[910px]:max-w-full space-y-4">
-          <img loading="eager" className="w-full rounded-md h-[450px] object-cover" src={ABDO} alt="Abdo's Photo" />
+          <img
+            loading="eager"
+            className="w-full rounded-md h-[450px] object-cover"
+            src={ABDO}
+            alt="Abdo's Photo"
+          />
           <h3 className="text-center leading-6 font-montserrat font-semibold tracking-wide">
             Abdelrahman Sayed the founder of{" "}
             <span className="underline text-primary">MTTV</span>
@@ -117,7 +132,7 @@ const Home = () => {
       <div className="questions-container flex justify-center my-8">
         <AttendButton
           className="max-[1180px]:max-w-[620px] max-[768px]:max-w-[425px] max-[500px]:max-w-[270px]"
-          handleModalOpen={() => setIsBookingModalShown(true)}
+          handleModalOpen={handleModalOpen}
         />
       </div>
     </>
