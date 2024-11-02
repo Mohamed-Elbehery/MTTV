@@ -18,7 +18,7 @@ export default function VideoTraining() {
         </h1>
       </div>
 
-      <h1 className="text-center font-almarai font-extralight w-full max-w-[1140px] mx-auto text-1xl sm:text-2xl md:text-3xl lg:text-4xl my-8 text-gray-200">
+      <h1 className="text-center font-almarai font-extralight w-full max-w-[1140px] mx-auto text-xl sm:text-2xl md:text-3xl lg:text-4xl my-8 text-gray-200">
         <span className="font-bold text-secondary text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
           الخطوة الأولى
         </span>{" "}
