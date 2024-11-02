@@ -119,7 +119,7 @@ const Home = () => {
           <img
             loading="eager"
             className="w-full rounded-md h-[450px] object-cover"
-            src={"/personal_photo.webp"}
+            src={"/personal_photo.png"}
             alt="Abdo's Photo"
           />
           <h3 className="text-center leading-6 font-montserrat font-semibold tracking-wide">
