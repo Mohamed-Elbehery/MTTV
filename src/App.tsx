@@ -3,10 +3,13 @@ import "./App.css";
 
 const App = () => {
   return (
-    <main>
-      <div className="home-header bg-primary h-5" />
-      <Outlet />
-    </main>
+    <>
+      <header className="home-header bg-primary h-5" />
+
+      <main>
+        <Outlet />
+      </main>
+    </>
   );
 };
 

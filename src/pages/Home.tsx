@@ -85,14 +85,14 @@ const Home = () => {
       />
 
       <div className="flex flex-col items-center justify-center gap-6 my-8">
-        <h2 className="first-content text-center text-base sm:text-lg xl:text-2xl">
+        <h1 className="first-content text-center text-base sm:text-lg xl:text-2xl">
           **للمبتدئين وأصحاب الخبرات في التجارة الالكترونيه فقط**
-        </h2>
-        <h1 className="first-content text-center text-2xl sm:text-3xl md:text-4xl xl:text-[70px] text-primary font-bold font-almarai !leading-[1.45]">
+        </h1>
+        <h2 className="first-content text-center text-2xl sm:text-3xl md:text-4xl xl:text-[70px] text-primary font-bold font-almarai !leading-[1.45]">
           خمس خطوات لدخل يفوق
           <br />
           ال 20 الف جنيه شهرياً
-        </h1>
+        </h2>
         <div className="first-content w-full flex justify-center">
           <AttendButton
             className="max-[1180px]:max-w-[720px] max-[768px]:max-w-[475px] max-[500px]:max-w-[270px]"
@@ -129,9 +129,10 @@ const Home = () => {
           </h3>
         </div>
       </div>
+
       <div className="questions-container flex justify-center my-8">
         <AttendButton
-          className="max-[1180px]:max-w-[620px] max-[768px]:max-w-[425px] max-[500px]:max-w-[270px]"
+          className="max-w-[860px] max-[1180px]:max-w-[620px] max-[768px]:max-w-[425px] max-[500px]:max-w-[270px]"
           handleModalOpen={handleModalOpen}
         />
       </div>

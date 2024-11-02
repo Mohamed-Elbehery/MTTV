@@ -25,27 +25,38 @@ export default function VideoTraining() {
         : اتفرج على التدريب المجاني
       </h1>
 
-      <div className="h-[641.25px] max-[1180px]:h-[430px] max-[1180px]:w-[740px] max-[768px]:w-[400px] max-[768px]:h-[230px] max-[450px]:w-full max-[450px]:h-[240px] mx-auto">
+      <div className="max-[450px]:w-[90%] w-[80%] mx-auto">
         <div
-          className="wistia_responsive_padding w-[1140px] h-[641.25px] max-[1180px]:h-[430px] max-[1180px]:w-[740px] max-[768px]:w-[400px] max-[768px]:h-[230px] max-[450px]:w-full max-[450px]:h-[240px] mx-auto"
-          style={{ position: "relative" }}
+          className="wistia_responsive_padding"
+          style={{ padding: "56.25% 0 0 0", position: "relative" }}
         >
           <div
             className="wistia_responsive_wrapper"
-            style={{ left: 0, position: "absolute", top: 0, width: "100%" }}
+            style={{
+              height: "100%",
+              left: "0",
+              position: "absolute",
+              top: "0",
+              width: "100%",
+            }}
           >
             <div
               className="wistia_embed wistia_async_31jxpprfsf seo=true videoFoam=true"
-              style={{ position: "relative", width: "100%" }}
+              style={{
+                height: "100%",
+                position: "relative",
+                width: "100%",
+              }}
             >
               <div
                 className="wistia_swatch"
                 style={{
-                  left: 0,
-                  opacity: 0,
+                  height: "100%",
+                  left: "0",
+                  opacity: "0",
                   overflow: "hidden",
                   position: "absolute",
-                  top: 0,
+                  top: "0",
                   transition: "opacity 200ms",
                   width: "100%",
                 }}
@@ -54,15 +65,16 @@ export default function VideoTraining() {
                   src="https://fast.wistia.com/embed/medias/31jxpprfsf/swatch"
                   style={{
                     filter: "blur(5px)",
+                    height: "100%",
                     objectFit: "contain",
                     width: "100%",
                   }}
-                  alt=""
                   aria-hidden="true"
-                  onLoad={(e) => {
-                    (e.target as HTMLElement).parentElement!.style.opacity =
-                      "1";
-                  }}
+                  onLoad={(e) =>
+                    ((
+                      (e.target as HTMLImageElement).parentNode as HTMLElement
+                    ).style.opacity = "1")
+                  }
                 />
               </div>
             </div>
