@@ -1,5 +1,4 @@
 import { FaCheck } from "react-icons/fa";
-import ABDO from "../assets/personal_photo.webp";
 import AttendButton from "../components/AttendButton";
 import { homePageQuestions } from "../constants";
 import gsap from "gsap";
@@ -120,7 +119,7 @@ const Home = () => {
           <img
             loading="eager"
             className="w-full rounded-md h-[450px] object-cover"
-            src={ABDO}
+            src={"/personal_photo.webp"}
             alt="Abdo's Photo"
           />
           <h3 className="text-center leading-6 font-montserrat font-semibold tracking-wide">
