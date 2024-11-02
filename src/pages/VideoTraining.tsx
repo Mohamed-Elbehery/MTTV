@@ -90,7 +90,6 @@ export default function VideoTraining() {
       </h2>
 
       <div className="flex flex-col justify-center items-center gap-y-8 relative z-50 pb-4">
-        {" "}
         <FaChevronDown className="text-4xl animate-bounce" />
         <button
           onClick={() => navigate("/questionnare")}
